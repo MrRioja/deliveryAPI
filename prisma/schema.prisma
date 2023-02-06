@@ -1,6 +1,10 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -16,6 +20,7 @@ model Deliveryman {
   password String
 
   deliveries Deliveries[]
+
   @@map("deliveryman")
 }
 
@@ -25,6 +30,7 @@ model Clients {
   password String
 
   deliveries Deliveries[]
+
   @@map("clients")
 }
 
